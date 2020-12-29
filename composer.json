@@ -1,0 +1,12 @@
+{
+    "name": "hongsik/simple-php-unit-test",
+    "authors": [
+        {
+            "name": "kimsikkong",
+            "email": "kimsikkong@gmail.com"
+        }
+    ],
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+    }
+}
