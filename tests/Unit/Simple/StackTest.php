@@ -8,17 +8,25 @@ use PHPUnit\Framework\TestCase;
 
 final class StackTest extends TestCase
 {
+
+    private array $stack;
+
+    protected function setUp(): void
+    {
+        parent::setUp();
+        $this->stack = [];
+    }
+
     public function testPushAndPop(): void
     {
-        $stack = [];
-        $this->assertSame(0, count($stack));
-        array_push($stack, 'foo');
+        $this->assertSame(0, count($this->stack));
+        array_push($this->stack, 'foo');
 
-        $this->assertSame('foo', $stack[count($stack) - 1]);
-        $this->assertSame(1, count($stack));
+        $this->assertSame('foo', $this->stack[count($this->stack) - 1]);
+        $this->assertSame(1, count($this->stack));
 
-        $this->assertSame('foo', array_pop($stack));
-        $this->assertSame(0, count($stack));
+        $this->assertSame('foo', array_pop($this->stack));
+        $this->assertSame(0, count($this->stack));
     }
 
     public function testEmpty(): array
